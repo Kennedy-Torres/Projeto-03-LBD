@@ -1,0 +1,4350 @@
+{
+  "paper": {
+    "name": "A4",
+    "leftMargin": 0.5,
+    "rightMargin": 0.5,
+    "topMargin": 0.5,
+    "bottomMargin": 0.5,
+    "isPortriat": true
+  },
+  "modelVersion": 2.01,
+  "defaultSchema": "default",
+  "server": {
+    "objectType": "Server_LOGICAL",
+    "name": "Default",
+    "schemas": [
+      {
+        "objectType": "Schema_LOGICAL",
+        "name": "default",
+        "tables": [
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "",
+            "comment": "",
+            "oldName": "",
+            "fields": [],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Contraindicacao",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Fabricante",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Lotes_por_farmacia",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "farmacia_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "farmacia_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "lote_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "lote_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "farmacia_id",
+                "fields": [
+                  "farmacia_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Farmacia",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "lote_id",
+                "fields": [
+                  "lote_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Lote",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "produto_contraindicacao",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "contraindicacao_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "contraindicacao_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "contraindicacao",
+                "fields": [
+                  "contraindicacao_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Contraindicacao",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "produto",
+                "fields": [
+                  "produto_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Produto",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Categoria",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "categoria_pai",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "categoria_pai"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Categoria_Categoria_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Categoria",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Favoritos",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cliente_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cliente_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "prods_favoritos",
+                "fields": [
+                  "produto_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Produto",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "cliente",
+                "fields": [
+                  "cliente_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Cliente",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Endereco",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "uf",
+                "type": "CHAR VARYING",
+                "length": 2,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "uf"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cidade",
+                "type": "CHAR VARYING",
+                "length": 20,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cidade"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "rua",
+                "type": "CHAR VARYING",
+                "length": 80,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "rua"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Produtos_comprados",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "pedido_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "pedido_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "produto_pedido",
+                "fields": [
+                  "produto_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Produto",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "pedido_do_produto",
+                "fields": [
+                  "pedido_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Pedidos",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "uf",
+            "comment": "",
+            "oldName": "",
+            "fields": [],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Status",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "destino",
+                "type": "CHAR VARYING",
+                "length": 40,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "destino"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "descricao",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "descricao"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "local_partida",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "local_partida"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "pedido_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "pedido_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "p_idName\tAttributes\tReferenced Entity\tReferenced Attributes\tComment\np_id\t\t\t\tpedido_status",
+                "fields": [
+                  "pedido_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Pedidos",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [
+              {
+                "objectType": "Index_LOGICAL",
+                "name": "",
+                "fields": [],
+                "type": "Default",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "produtos_contraindicacoes",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "contraindicacao_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "contraindicacao_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "produto Copy 1",
+                "fields": [
+                  "produto_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Produto",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "contraindicacao Copy 1",
+                "fields": [
+                  "contraindicacao_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Contraindicacao",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Pedidos",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cliente_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cliente_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_hora_compra",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_hora_compra"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "prazo_entrega",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "prazo_entrega"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_correio",
+                "type": "CHAR VARYING",
+                "length": 20,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_correio"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "de_qual_cliente",
+                "fields": [
+                  "cliente_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Cliente",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Farmacia",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "endereco_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "endereco_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "localizada_em",
+                "fields": [
+                  "endereco_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Endereco",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Lote",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "farmacia_id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "farmacia_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "id",
+                "fields": [],
+                "referencedSchema": "default",
+                "referencedTable": "",
+                "referencedFields": [],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "farmacia_lote",
+                "fields": [
+                  "farmacia_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Farmacia",
+                "referencedFields": [],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Lote Copy 1",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "farmacia_id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "farmacia_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "id Copy 1",
+                "fields": [],
+                "referencedSchema": "default",
+                "referencedTable": "",
+                "referencedFields": [],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "farmacia_lote Copy 1",
+                "fields": [
+                  "farmacia_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Farmacia",
+                "referencedFields": [],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "produtos_em_lote",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "lote_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "lote_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "produto_farmacia",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "farmacia_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "farmacia_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "e_vendido_por",
+                "fields": [
+                  "farmacia_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Farmacia",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "vende",
+                "fields": [
+                  "produto_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Produto",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "produtos_lote",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "lote_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "lote_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "produto_em_lote",
+                "fields": [
+                  "produto_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Produto",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "entregue_em",
+                "fields": [
+                  "lote_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Lote",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Produto",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "data",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "proposito",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "proposito"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "modo_de_uso",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "modo_de_uso"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "foto",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "foto"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "link_bula",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "link_bula"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_de_validade",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_de_validade"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "num_subunidades",
+                "type": "DECIMAL",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "num_subunidades"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "qtd_em_estoque",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "qtd_em_estoque"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "categoria_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "categoria_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "fabricante_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "fabricante_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "farmacia_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "farmacia_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "desconto",
+                "type": "FLOAT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "desconto"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_registro",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "preco",
+                "type": "FLOAT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "NULL",
+                "comment": "",
+                "oldName": "preco"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "codigo_de_barra",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "codigo_de_barra"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "categoria_produto",
+                "fields": [
+                  "categoria_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Categoria",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fabricante_prod",
+                "fields": [
+                  "fabricante_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Fabricante",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "farmacia_produto",
+                "fields": [
+                  "farmacia_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Farmacia",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "funcionarios_farmacias",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "funcionario_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "funcionario_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "farmacia_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "farmacia_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "quais_farmacias_trabalha_funcionario",
+                "fields": [
+                  "farmacia_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Farmacia",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "quais_funcionarios_tem_farmacia",
+                "fields": [
+                  "funcionario_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Funcionario",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Cliente",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 50,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "senha",
+                "type": "CHAR VARYING",
+                "length": 50,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "senha"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cpf",
+                "type": "CHAR VARYING",
+                "length": 14,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cpf"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "email",
+                "type": "CHAR VARYING",
+                "length": 50,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "email"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "telefone",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "telefone"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "endereco_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "endereco_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "endereco_cliente",
+                "fields": [
+                  "endereco_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Endereco",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "clientes_convenios",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cliente_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cliente_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "convenio_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "convenio_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "cliente_tem_convenios",
+                "fields": [
+                  "convenio_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Convenio",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "convenio_tem_cliente",
+                "fields": [
+                  "cliente_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Cliente",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Convenio",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "Cliente_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "Cliente_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome do convênio",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome do convênio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "modelo do convênio",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "modelo do convênio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "regionalidade",
+                "type": "CHAR VARYING",
+                "length": 20,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "regionalidade"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "CNPJ",
+                "type": "INTEGER",
+                "length": 15,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "CNPJ"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "código do convênio",
+                "type": "INTEGER",
+                "length": 20,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "código do convênio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data de vencimento",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data de vencimento"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Funcionario",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cpf",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cpf"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "email",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "email"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "enderco_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "enderco_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "telefone",
+                "type": "CHAR VARYING",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "telefone"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_de_nascimento",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_de_nascimento"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "registro",
+                "type": "CHAR VARYING",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "descricao",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "descricao"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_de_admissao",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_de_admissao"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "salario",
+                "type": "FLOAT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "salario"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "turno",
+                "type": "CHAR VARYING",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "turno"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "credencial",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "credencial"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "vinculo_empregaticio",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "vinculo_empregaticio"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "jornada_de_trabalho",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "jornada_de_trabalho"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "tem_endereco",
+                "fields": [
+                  "enderco_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Endereco",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Entregador",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "cpf",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "cpf"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "email",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "email"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "enderco_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "enderco_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "telefone",
+                "type": "CHAR VARYING",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "telefone"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_de_nascimento",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_de_nascimento"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "registro",
+                "type": "CHAR VARYING",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "registro"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "descricao",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "descricao"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_de_admissao",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_de_admissao"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "forma_de_entrega",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "forma_de_entrega"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Regiao",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "nome",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "nome"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "produtos_entrega",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "produto_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "produto_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "entrega_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "entrega_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "entregas_produto",
+                "fields": [
+                  "entrega_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Entrega",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "produtos_entrega",
+                "fields": [
+                  "produto_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Produto",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "entregadores_por_regiao",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "regiao_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "regiao_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "entregador_id",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "entregador_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "entregadores_por_regiao",
+                "fields": [
+                  "entregador_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Entregador",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "regioes_do_entregador",
+                "fields": [
+                  "regiao_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Regiao",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Entrega",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "entregador_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "entregador_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "frete",
+                "type": "FLOAT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "frete"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "endereco_partida",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "endereco_partida"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "endereco_destino",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "endereco_destino"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_hora_entrega",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_hora_entrega"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "repasse_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "repasse_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "entregador_responsavel",
+                "fields": [
+                  "entregador_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Entregador",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "parte_de",
+                "fields": [
+                  "endereco_partida"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Endereco",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "vai_a",
+                "fields": [
+                  "endereco_destino"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Endereco",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "repasse_entrega",
+                "fields": [
+                  "repasse_id"
+                ],
+                "referencedSchema": "default",
+                "referencedTable": "Repasse",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Repasse",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "entregador_id",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "entregador_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "data_hora",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "data_hora"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "name": "Diagram 1",
+      "paperWidth": 3,
+      "paperHeight": 2,
+      "tableFont": "Arial Unicode MS",
+      "tableFontSize": 14,
+      "isBalckWhite": false,
+      "showDBSchemaName": false,
+      "showViewRelations": true,
+      "notation": "default",
+      "showFieldComment": false,
+      "showTableComment": false,
+      "shapes": [
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Produto",
+          "x": 1570,
+          "y": 850,
+          "width": 230,
+          "height": 360,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Contraindicacao",
+          "x": 2120,
+          "y": 770,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Categoria",
+          "x": 1220,
+          "y": 770,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Fabricante",
+          "x": 1030,
+          "y": 1000,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Farmacia",
+          "x": 1480,
+          "y": 1600,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Lote",
+          "x": 1050,
+          "y": 1420,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Cliente",
+          "x": 1720,
+          "y": 2160,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Favoritos",
+          "x": 2310,
+          "y": 2080,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Pedidos",
+          "x": 1740,
+          "y": 1820,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Status",
+          "x": 2190,
+          "y": 1790,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Endereco",
+          "x": 870,
+          "y": 1750,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Produtos_comprados",
+          "x": 1900,
+          "y": 1520,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "produtos_contraindicacoes",
+          "x": 1940,
+          "y": 990,
+          "width": 230,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "produto_farmacia",
+          "x": 2020,
+          "y": 1230,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "produtos_lote",
+          "x": 1260,
+          "y": 1210,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Funcionario",
+          "x": 860,
+          "y": 1980,
+          "width": 260,
+          "height": 360,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "funcionarios_farmacias",
+          "x": 1330,
+          "y": 2280,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Convenio",
+          "x": 1700,
+          "y": 2620,
+          "width": 200,
+          "height": 220,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "clientes_convenios",
+          "x": 1720,
+          "y": 2390,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Entregador",
+          "x": 1060,
+          "y": 560,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Regiao",
+          "x": 930,
+          "y": 0,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "entregadores_por_regiao",
+          "x": 1460,
+          "y": 0,
+          "width": 200,
+          "height": 170,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Entrega",
+          "x": 1820,
+          "y": 200,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "produtos_entrega",
+          "x": 1710,
+          "y": 600,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "default",
+          "tableName": "Repasse",
+          "x": 1460,
+          "y": 370,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        }
+      ],
+      "layers": [],
+      "relations": [
+        {
+          "name": "farmacia_lote",
+          "sourceTableName": "Lote",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1265,
+              "y": 1470
+            },
+            {
+              "x": 1500,
+              "y": 1470
+            },
+            {
+              "x": 1500,
+              "y": 1585
+            }
+          ],
+          "label": {
+            "x": 1260,
+            "y": 1422,
+            "width": 92,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "categoria_produto",
+          "sourceTableName": "Produto",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1555,
+              "y": 1090
+            },
+            {
+              "x": 1490,
+              "y": 1090
+            },
+            {
+              "x": 1490,
+              "y": 870
+            },
+            {
+              "x": 1435,
+              "y": 870
+            }
+          ],
+          "label": {
+            "x": 1442,
+            "y": 1042,
+            "width": 123,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Categoria_Categoria_1",
+          "sourceTableName": "Categoria",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1400,
+              "y": 755
+            },
+            {
+              "x": 1290,
+              "y": 755
+            }
+          ],
+          "label": {
+            "x": 1402,
+            "y": 770,
+            "width": 172,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fabricante_prod",
+          "sourceTableName": "Produto",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1555,
+              "y": 1180
+            },
+            {
+              "x": 1440,
+              "y": 1080
+            },
+            {
+              "x": 1245,
+              "y": 1080
+            }
+          ],
+          "label": {
+            "x": 1458,
+            "y": 1132,
+            "width": 107,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "farmacia_produto",
+          "sourceTableName": "Produto",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1690,
+              "y": 1225
+            },
+            {
+              "x": 1690,
+              "y": 1350
+            },
+            {
+              "x": 1580,
+              "y": 1350
+            },
+            {
+              "x": 1580,
+              "y": 1585
+            }
+          ],
+          "label": {
+            "x": 1698,
+            "y": 1215,
+            "width": 118,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "endereco_cliente",
+          "sourceTableName": "Cliente",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1705,
+              "y": 2260
+            },
+            {
+              "x": 1650,
+              "y": 2260
+            },
+            {
+              "x": 1650,
+              "y": 1850
+            },
+            {
+              "x": 1085,
+              "y": 1850
+            }
+          ],
+          "label": {
+            "x": 1599,
+            "y": 2212,
+            "width": 116,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "prods_favoritos",
+          "sourceTableName": "Favoritos",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2490,
+              "y": 2065
+            },
+            {
+              "x": 2490,
+              "y": 1720
+            },
+            {
+              "x": 1700,
+              "y": 1225
+            }
+          ],
+          "label": {
+            "x": 2387,
+            "y": 2025,
+            "width": 105,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "cliente",
+          "sourceTableName": "Favoritos",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2295,
+              "y": 2200
+            },
+            {
+              "x": 2110,
+              "y": 2200
+            },
+            {
+              "x": 1950,
+              "y": 2200
+            },
+            {
+              "x": 1935,
+              "y": 2260
+            }
+          ],
+          "label": {
+            "x": 2255,
+            "y": 2152,
+            "width": 50,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "produto_pedido",
+          "sourceTableName": "Produtos_comprados",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1885,
+              "y": 1620
+            },
+            {
+              "x": 1710,
+              "y": 1620
+            },
+            {
+              "x": 1710,
+              "y": 1225
+            }
+          ],
+          "label": {
+            "x": 1788,
+            "y": 1572,
+            "width": 107,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "pedido_do_produto",
+          "sourceTableName": "Produtos_comprados",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1885,
+              "y": 1650
+            },
+            {
+              "x": 1830,
+              "y": 1760
+            },
+            {
+              "x": 1770,
+              "y": 1780
+            },
+            {
+              "x": 1770,
+              "y": 1805
+            }
+          ],
+          "label": {
+            "x": 1901,
+            "y": 1652,
+            "width": 130,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "p_idName\tAttributes\tReferenced Entity\tReferenced Attributes\tComment\np_id\t\t\t\tpedido_status",
+          "sourceTableName": "Status",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2175,
+              "y": 1950
+            },
+            {
+              "x": 2060,
+              "y": 1950
+            },
+            {
+              "x": 2050,
+              "y": 1950
+            },
+            {
+              "x": 1955,
+              "y": 1950
+            }
+          ],
+          "label": {
+            "x": 1664,
+            "y": 1896,
+            "width": 516,
+            "height": 46,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "de_qual_cliente",
+          "sourceTableName": "Pedidos",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1840,
+              "y": 2035
+            },
+            {
+              "x": 1840,
+              "y": 2030
+            },
+            {
+              "x": 1820,
+              "y": 2030
+            },
+            {
+              "x": 1820,
+              "y": 2145
+            }
+          ],
+          "label": {
+            "x": 1848,
+            "y": 2025,
+            "width": 106,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "produto Copy 1",
+          "sourceTableName": "produtos_contraindicacoes",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1925,
+              "y": 1090
+            },
+            {
+              "x": 1830,
+              "y": 1090
+            },
+            {
+              "x": 1830,
+              "y": 1030
+            },
+            {
+              "x": 1815,
+              "y": 1030
+            }
+          ],
+          "label": {
+            "x": 1878,
+            "y": 1042,
+            "width": 57,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "contraindicacao Copy 1",
+          "sourceTableName": "produtos_contraindicacoes",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2060,
+              "y": 975
+            },
+            {
+              "x": 2060,
+              "y": 900
+            },
+            {
+              "x": 2100,
+              "y": 870
+            },
+            {
+              "x": 2105,
+              "y": 870
+            }
+          ],
+          "label": {
+            "x": 2059,
+            "y": 935,
+            "width": 108,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "localizada_em",
+          "sourceTableName": "Farmacia",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1465,
+              "y": 1620
+            },
+            {
+              "x": 970,
+              "y": 1620
+            },
+            {
+              "x": 970,
+              "y": 1735
+            }
+          ],
+          "label": {
+            "x": 1378,
+            "y": 1572,
+            "width": 97,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "e_vendido_por",
+          "sourceTableName": "produto_farmacia",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2120,
+              "y": 1445
+            },
+            {
+              "x": 2120,
+              "y": 1530
+            },
+            {
+              "x": 1590,
+              "y": 1530
+            },
+            {
+              "x": 1590,
+              "y": 1585
+            }
+          ],
+          "label": {
+            "x": 2128,
+            "y": 1435,
+            "width": 101,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "vende",
+          "sourceTableName": "produto_farmacia",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2235,
+              "y": 1330
+            },
+            {
+              "x": 1720,
+              "y": 1330
+            },
+            {
+              "x": 1720,
+              "y": 1225
+            }
+          ],
+          "label": {
+            "x": 2225,
+            "y": 1282,
+            "width": 50,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "produto_em_lote",
+          "sourceTableName": "produtos_lote",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1475,
+              "y": 1310
+            },
+            {
+              "x": 1610,
+              "y": 1310
+            },
+            {
+              "x": 1610,
+              "y": 1225
+            }
+          ],
+          "label": {
+            "x": 1465,
+            "y": 1262,
+            "width": 113,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "entregue_em",
+          "sourceTableName": "produtos_lote",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1360,
+              "y": 1425
+            },
+            {
+              "x": 1360,
+              "y": 1490
+            },
+            {
+              "x": 1150,
+              "y": 1490
+            },
+            {
+              "x": 1150,
+              "y": 1405
+            }
+          ],
+          "label": {
+            "x": 1368,
+            "y": 1415,
+            "width": 91,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "quais_farmacias_trabalha_funcionario",
+          "sourceTableName": "funcionarios_farmacias",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1545,
+              "y": 2380
+            },
+            {
+              "x": 1580,
+              "y": 2380
+            },
+            {
+              "x": 1580,
+              "y": 1815
+            }
+          ],
+          "label": {
+            "x": 1535,
+            "y": 2332,
+            "width": 246,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "quais_funcionarios_tem_farmacia",
+          "sourceTableName": "funcionarios_farmacias",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1315,
+              "y": 2380
+            },
+            {
+              "x": 1165,
+              "y": 2380
+            },
+            {
+              "x": 1165,
+              "y": 2160
+            },
+            {
+              "x": 1135,
+              "y": 2160
+            }
+          ],
+          "label": {
+            "x": 1108,
+            "y": 2332,
+            "width": 217,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "tem_endereco",
+          "sourceTableName": "Funcionario",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1135,
+              "y": 2170
+            },
+            {
+              "x": 1240,
+              "y": 2170
+            },
+            {
+              "x": 1240,
+              "y": 1850
+            },
+            {
+              "x": 855,
+              "y": 1850
+            }
+          ],
+          "label": {
+            "x": 1125,
+            "y": 2122,
+            "width": 98,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "cliente_tem_convenios",
+          "sourceTableName": "clientes_convenios",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1820,
+              "y": 2605
+            },
+            {
+              "x": 1820,
+              "y": 2605
+            },
+            {
+              "x": 1800,
+              "y": 2605
+            },
+            {
+              "x": 1800,
+              "y": 2605
+            }
+          ],
+          "label": {
+            "x": 1828,
+            "y": 2595,
+            "width": 150,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "convenio_tem_cliente",
+          "sourceTableName": "clientes_convenios",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1820,
+              "y": 2375
+            },
+            {
+              "x": 1820,
+              "y": 2375
+            },
+            {
+              "x": 1820,
+              "y": 2375
+            },
+            {
+              "x": 1820,
+              "y": 2375
+            }
+          ],
+          "label": {
+            "x": 1828,
+            "y": 2345,
+            "width": 143,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "entregadores_por_regiao",
+          "sourceTableName": "entregadores_por_regiao",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1560,
+              "y": 185
+            },
+            {
+              "x": 1560,
+              "y": 540
+            },
+            {
+              "x": 1160,
+              "y": 540
+            },
+            {
+              "x": 1160,
+              "y": 545
+            }
+          ],
+          "label": {
+            "x": 1568,
+            "y": 175,
+            "width": 168,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "regioes_do_entregador",
+          "sourceTableName": "entregadores_por_regiao",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1445,
+              "y": 120
+            },
+            {
+              "x": 1270,
+              "y": 120
+            },
+            {
+              "x": 1270,
+              "y": 120
+            },
+            {
+              "x": 1145,
+              "y": 120
+            }
+          ],
+          "label": {
+            "x": 1461,
+            "y": 100,
+            "width": 155,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "entregas_produto",
+          "sourceTableName": "produtos_entrega",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1810,
+              "y": 585
+            },
+            {
+              "x": 1810,
+              "y": 580
+            },
+            {
+              "x": 1920,
+              "y": 580
+            },
+            {
+              "x": 1920,
+              "y": 415
+            }
+          ],
+          "label": {
+            "x": 1818,
+            "y": 555,
+            "width": 120,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "produtos_entrega",
+          "sourceTableName": "produtos_entrega",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1695,
+              "y": 700
+            },
+            {
+              "x": 1690,
+              "y": 700
+            },
+            {
+              "x": 1690,
+              "y": 835
+            }
+          ],
+          "label": {
+            "x": 1585,
+            "y": 652,
+            "width": 120,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "entregador_responsavel",
+          "sourceTableName": "Entrega",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1805,
+              "y": 300
+            },
+            {
+              "x": 1670,
+              "y": 300
+            },
+            {
+              "x": 1670,
+              "y": 660
+            },
+            {
+              "x": 1275,
+              "y": 660
+            }
+          ],
+          "label": {
+            "x": 1653,
+            "y": 252,
+            "width": 162,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "parte_de",
+          "sourceTableName": "Entrega",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1805,
+              "y": 310
+            },
+            {
+              "x": 980,
+              "y": 310
+            },
+            {
+              "x": 980,
+              "y": 1735
+            }
+          ],
+          "label": {
+            "x": 1751,
+            "y": 262,
+            "width": 64,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "vai_a",
+          "sourceTableName": "Entrega",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1805,
+              "y": 320
+            },
+            {
+              "x": 990,
+              "y": 320
+            },
+            {
+              "x": 990,
+              "y": 1735
+            }
+          ],
+          "label": {
+            "x": 1765,
+            "y": 272,
+            "width": 50,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "repasse_entrega",
+          "sourceTableName": "Entrega",
+          "sourceSchemaName": "default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1805,
+              "y": 330
+            },
+            {
+              "x": 1560,
+              "y": 330
+            },
+            {
+              "x": 1560,
+              "y": 355
+            }
+          ],
+          "label": {
+            "x": 1700,
+            "y": 282,
+            "width": 115,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        }
+      ],
+      "viewRelations": []
+    }
+  ]
+}
